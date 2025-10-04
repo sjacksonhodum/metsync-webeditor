@@ -238,6 +238,8 @@ MIT License - feel free to use this project for personal or commercial purposes.
 
 ## Screenshots
 
+<img width="1363" height="881" alt="Screenshot 2025-10-04 at 6 48 03 PM" src="https://github.com/user-attachments/assets/ba555435-d29d-4a36-8779-9cba85b55a8f" />
+<img width="1363" height="881" alt="Screenshot 2025-10-04 at 6 50 07 PM" src="https://github.com/user-attachments/assets/90be08f6-5fd4-4213-a54a-b53289fa0693" />
 
 ---
 
