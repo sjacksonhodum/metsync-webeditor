@@ -3,26 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>metsync web editor</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%236366f1' width='100' height='100' rx='20'/%3E%3Ctext x='50' y='70' font-size='60' font-weight='bold' text-anchor='middle' fill='white' font-family='system-ui'%3Em%3C/text%3E%3C/svg%3E">
-    <link rel="stylesheet                <!-- BPM specific -->
-                <div id="bpmOptions" class="event-options" style="display: none;">
-                    <div class="form-group">
-                        <label>change type:</label>
-                        <select id="bpmChangeType" class="form-control">
-                            <option value="static">instant</option>
-                            <option value="gradual">gradual</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>bpm:</label>les.css"                <!-- Time Signature specific -->
-                <div id="timeSigOptions" class="event-options" style="display: none;">
-                    <div class="form-group">
-                        <label>beats per measure:</label>
-                        <input type="number" id="timeSigBeats" class="form-control" value="4" min="1" max="16">
-                    </div>
-                    <div class="form-group">
-                        <label>note value:</label>ink rel="preconnect" href="https://fonts.googleapis.com">
+    <title>MetSync Web Editor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
@@ -30,9 +13,9 @@
     <!-- Welcome Screen -->
     <div id="welcomeScreen" class="welcome-screen">
         <div class="welcome-container">
-            <div class="logo">metsync</div>
-            <h1>web editor</h1>
-            <p>create and edit bpm files for your metsync device</p>
+            <div class="logo">MetSync</div>
+            <h1>Web Editor</h1>
+            <p>Create and edit BPM files for your MetSync device</p>
             <div class="welcome-actions">
                 <button id="createNewBtn" class="btn btn-primary">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -41,14 +24,14 @@
                         <line x1="12" y1="18" x2="12" y2="12"/>
                         <line x1="9" y1="15" x2="15" y2="15"/>
                     </svg>
-                    create new file
+                    Create New File
                 </button>
                 <button id="openFileBtn" class="btn btn-secondary">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/>
                         <polyline points="13 2 13 9 20 9"/>
                     </svg>
-                    open bpm file
+                    Open BPM File
                 </button>
                 <input type="file" id="fileInput" accept=".bpm" style="display: none;">
             </div>
@@ -60,17 +43,17 @@
         <!-- Header -->
         <header class="editor-header">
             <div class="header-left">
-                <div class="logo-small">metsync</div>
+                <div class="logo-small">MetSync</div>
                 <span class="separator">|</span>
                 <span id="fileName" class="file-name">Untitled.bpm</span>
             </div>
             <div class="header-actions">
-                <button id="themeToggleBtn" class="theme-toggle" onclick="toggleTheme()" title="toggle theme (ctrl+t)">🌓</button>
-                <button id="bookmarksBtn" class="btn btn-small" onclick="toggleBookmarksPanel()" title="bookmarks (ctrl+b)">📑</button>
-                <button id="exportClickTrackBtn" class="btn btn-small" title="export click track">🎵 export click</button>
-                <button id="saveBtn" class="btn btn-small" title="save (ctrl+s)">save</button>
-                <button id="downloadBtn" class="btn btn-small">download</button>
-                <button id="closeBtn" class="btn btn-small btn-outline">close</button>
+                <button id="themeToggleBtn" class="theme-toggle" onclick="toggleTheme()" title="Toggle Theme (Ctrl+T)">🌓</button>
+                <button id="bookmarksBtn" class="btn btn-small" onclick="toggleBookmarksPanel()" title="Bookmarks (Ctrl+B)">📑</button>
+                <button id="exportClickTrackBtn" class="btn btn-small" title="Export Click Track">🎵 Export Click</button>
+                <button id="saveBtn" class="btn btn-small" title="Save (Ctrl+S)">Save</button>
+                <button id="downloadBtn" class="btn btn-small">Download</button>
+                <button id="closeBtn" class="btn btn-small btn-outline">Close</button>
             </div>
         </header>
 
@@ -94,14 +77,14 @@
 
             <div class="metronome-indicator" title="Beat pulse">
                 <div id="metronomeOrb" class="metronome-orb"></div>
-                <span>pulse</span>
+                <span>Pulse</span>
             </div>
 
             <div class="cursor-mode">
-                <label>cursor mode:</label>
+                <label>Cursor Mode:</label>
                 <div class="mode-toggle">
-                    <button id="modeClick" class="active">click</button>
-                    <button id="modeFollow">follow</button>
+                    <button id="modeClick" class="active">Click</button>
+                    <button id="modeFollow">Follow</button>
                 </div>
             </div>
 
@@ -110,7 +93,7 @@
                     <input type="checkbox" id="metronomeToggle" checked>
                     <span class="toggle-slider"></span>
                 </label>
-                <span class="toggle-label">audio metronome</span>
+                <span class="toggle-label">Audio Metronome</span>
             </div>
 
             <!-- Volume Control - will be added by JS -->
@@ -121,9 +104,9 @@
         <div class="timeline-container">
             <div class="timeline-controls">
                 <div class="controls-left">
-                    <button id="addEventBtn" class="btn btn-small btn-primary">+ add event</button>
+                    <button id="addEventBtn" class="btn btn-small btn-primary">+ Add Event</button>
                     <div class="zoom-controls">
-                        <label>zoom:</label>
+                        <label>Zoom:</label>
                         <button id="zoomOutBtn" class="btn btn-icon">−</button>
                         <span id="zoomLevel">100%</span>
                         <button id="zoomInBtn" class="btn btn-icon">+</button>
@@ -131,31 +114,31 @@
                 </div>
                 <div class="preview-panel">
                     <div class="preview-item">
-                        <span class="preview-label">status</span>
-                        <span id="previewStatus" class="preview-value status-stopped">stopped</span>
+                        <span class="preview-label">Status</span>
+                        <span id="previewStatus" class="preview-value status-stopped">STOPPED</span>
                     </div>
                     <div class="preview-item">
-                        <span class="preview-label">time</span>
+                        <span class="preview-label">Time</span>
                         <span id="previewTime" class="preview-value">0:00.000</span>
                     </div>
                     <div class="preview-item">
-                        <span class="preview-label">measure</span>
+                        <span class="preview-label">Measure</span>
                         <span id="previewMeasure" class="preview-value">1</span>
                     </div>
                     <div class="preview-item">
-                        <span class="preview-label">beat</span>
+                        <span class="preview-label">Beat</span>
                         <span id="previewBeat" class="preview-value">1</span>
                     </div>
                     <div class="preview-item">
-                        <span class="preview-label">bpm</span>
+                        <span class="preview-label">BPM</span>
                         <span id="previewBPM" class="preview-value">120</span>
                     </div>
                     <div class="preview-item">
-                        <span class="preview-label">time sig</span>
+                        <span class="preview-label">Time Sig</span>
                         <span id="previewTimeSig" class="preview-value">4/4</span>
                     </div>
                     <div class="preview-item">
-                        <span class="preview-label">Δ beats</span>
+                        <span class="preview-label">Δ Beats</span>
                         <span id="previewDeltaBeats" class="preview-value">—</span>
                     </div>
                 </div>
@@ -165,15 +148,15 @@
                 <div class="timeline-ruler" id="timelineRuler"></div>
                 <div class="timeline-tracks">
                     <div class="track">
-                        <div class="track-label">start/stop</div>
+                        <div class="track-label">Start/Stop</div>
                         <div class="track-content" id="trackStartStop" data-track="startstop"></div>
                     </div>
                     <div class="track">
-                        <div class="track-label">bpm changes</div>
+                        <div class="track-label">BPM Changes</div>
                         <div class="track-content" id="trackBPM" data-track="bpm"></div>
                     </div>
                     <div class="track">
-                        <div class="track-label">time signature</div>
+                        <div class="track-label">Time Signature</div>
                         <div class="track-content" id="trackTimeSig" data-track="timesig"></div>
                     </div>
                 </div>
@@ -188,34 +171,34 @@
         <!-- Event Edit Panel -->
         <div id="eventPanel" class="event-panel" style="display: none;">
             <div class="event-panel-header">
-                <h3 id="eventPanelTitle">add event</h3>
+                <h3 id="eventPanelTitle">Add Event</h3>
                 <button id="closePanelBtn" class="btn btn-icon">×</button>
             </div>
             <div class="event-panel-content">
                 <div class="form-group">
-                    <label>event type:</label>
+                    <label>Event Type:</label>
                     <select id="eventType" class="form-control">
-                        <option value="startstop">start/stop command</option>
-                        <option value="bpm">bpm change</option>
-                        <option value="timesig">time signature</option>
+                        <option value="startstop">Start/Stop Command</option>
+                        <option value="bpm">BPM Change</option>
+                        <option value="timesig">Time Signature</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>measure:</label>
+                    <label>Measure:</label>
                     <input type="number" id="eventMeasure" class="form-control" value="1" min="1">
                 </div>
                 <div class="form-group">
-                    <label>beat:</label>
+                    <label>Beat:</label>
                     <input type="number" id="eventBeat" class="form-control" value="1" min="1" max="4">
                 </div>
 
                 <!-- Start/Stop specific -->
                 <div id="startStopOptions" class="event-options">
                     <div class="form-group">
-                        <label>command:</label>
+                        <label>Command:</label>
                         <select id="startStopCommand" class="form-control">
-                            <option value="start">start</option>
-                            <option value="stop">stop</option>
+                            <option value="start">START</option>
+                            <option value="stop">STOP</option>
                         </select>
                     </div>
                 </div>
