@@ -2,7 +2,7 @@
 
 A powerful web-based BPM file editor for metsync devices. Create, edit, and manage tempo maps with precision timing and visual feedback.
 
-**Live App:** [sjacksonhodum.github.io/webedit](https://sjacksonhodum.github.io/webedit)
+**Live App:** [sjacksonhodum.github.io/metsync-webeditor](https://sjacksonhodum.github.io/metsync-webeditor)
 
 ![metsync web editor](https://img.shields.io/badge/version-1.0.0-blue) ![License](https://img.shields.io/badge/license-MIT-green)
 
@@ -85,7 +85,7 @@ A powerful web-based BPM file editor for metsync devices. Create, edit, and mana
 
 ## Getting Started
 
-Visit the live app at: **[sjacksonhodum.github.io/webedit](https://sjacksonhodum.github.io/webedit)**
+Visit the live app at: **[sjacksonhodum.github.io/metsync-webeditor](https://sjacksonhodum.github.io/metsync-webeditor)**
 
 ### System Requirements
 
